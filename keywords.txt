@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map For Rosserial
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SC_iMotor	KEYWORD1
+EncoderRead	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setmotor_Diff 		KEYWORD2
+motor_direct 		KEYWORD2
+motor_rota 		KEYWORD2
+Enc1_Read		KEYWORD2
+Enc2_Read		KEYWORD2
+Enc3_Read		KEYWORD2
+Enc4_Read		KEYWORD2
+Enc1_Clear		KEYWORD2
+Enc2_Clear		KEYWORD2
+Enc3_Clear		KEYWORD2
+Enc4_Clear		KEYWORD2
+motor			KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
