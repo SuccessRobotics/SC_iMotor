@@ -5,6 +5,8 @@ SC_iMotor sc01;
 
 void setup() 
 {
+  Serial.begin(9600);
+  
   Wire.onReceive(receiveEvent); // register event
 }
 
@@ -26,16 +28,14 @@ void loop()
   Serial.print(" Encoder 4 : ");
   Serial.println(sc01.Enc4_Read());
 
-  sc01.motor(1, -100, 0);
-  sc01.motor(2, -100, 0);
-  sc01.motor(3, 100, 1);
-  sc01.motor(4, 100, 1);
+  sc01.motor(1, 0, 0);
+  sc01.motor(2, 0, 0);
+  sc01.motor(3, 0, 1);
+  sc01.motor(4, 0, 1);
   delay(1000);
 
-  sc01.Enc1_Clear();
-  sc01.Enc2_Clear();
-  sc01.Enc3_Clear();
-  sc01.Enc4_Clear();
+  sc01.Enc_Clear();
+  
 }
 
 void receiveEvent(int howMany)
