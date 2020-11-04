@@ -24,11 +24,7 @@ class SC_iMotor
 	int32_t Enc3_Read();
 	int32_t Enc4_Read();
 
-     	void Enc1_Clear();
-	void Enc2_Clear();
-	void Enc3_Clear();
-	void Enc4_Clear();
-
+     	void Enc_Clear();
 
   private:
 	void senddata_I2C(byte cmd0 , byte cmd1, byte cmd2, byte cmd3, byte cmd4, byte cmd5, byte cmd6, byte cmd7);
