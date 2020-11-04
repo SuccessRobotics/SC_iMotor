@@ -75,8 +75,7 @@ void loop()
     encR_msg.data = newPositionR;
   }
   if ((newPositionL > 1000000) || (newPositionR > 1000000) || (newPositionL < -1000000) || (newPositionR < -1000000)) {
-    sc01.Enc1_Clear();
-    sc01.Enc2_Clear();
+    sc01.Enc_Clear();
   }
   EncL.publish( &encL_msg );
   EncR.publish( &encR_msg );
