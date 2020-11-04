@@ -1,8 +1,4 @@
 #######################################
-# Syntax Coloring Map For Rosserial
-#######################################
-
-#######################################
 # Datatypes (KEYWORD1)
 #######################################
 
@@ -20,10 +16,7 @@ Enc1_Read		KEYWORD2
 Enc2_Read		KEYWORD2
 Enc3_Read		KEYWORD2
 Enc4_Read		KEYWORD2
-Enc1_Clear		KEYWORD2
-Enc2_Clear		KEYWORD2
-Enc3_Clear		KEYWORD2
-Enc4_Clear		KEYWORD2
+Enc_Clear		KEYWORD2
 motor			KEYWORD2
 
 #######################################
