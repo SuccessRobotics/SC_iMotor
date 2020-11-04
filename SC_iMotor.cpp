@@ -64,44 +64,52 @@ int32_t SC_iMotor::Enc1_Read()
   encoder[2] = encoder[2] * 256; 
   encoder[3] = encoder[3] * 65536;
 
-  Encode1 = encoder[1] + encoder[2] + encoder[3];
+  Encode1 = 0;
 
+  Encode1 = encoder[1] + encoder[2] + encoder[3];
 
   if (cmd_i2c[0] > 80) Encode1 = Encode1 * -1;
   return Encode1;
 }
 
-void SC_iMotor::Enc1_Clear()
+void SC_iMotor::Enc_Clear()
 {
-	senddata_I2C(69, Outcmd[1], Outcmd[2], Outcmd[3], Outcmd[4], Outcmd[5], Outcmd[6], Outcmd[7]);
+	senddata_I2C(69, 0,0,0,0,0,0,0);
 	cmd_i2c[4] = 0;
 	cmd_i2c[5] = 0;
 	cmd_i2c[6] = 0;
-}
 
-void SC_iMotor::Enc2_Clear()
-{
-	senddata_I2C(Outcmd[0], 70, Outcmd[2], Outcmd[3], Outcmd[4], Outcmd[5], Outcmd[6], Outcmd[7]);
+	encoder[1] = 0; 
+	encoder[2] = 0; 
+	encoder[3] = 0; 
+ 	Encode1 = 0;
+
 	cmd_i2c[7] = 0;
 	cmd_i2c[8] = 0;
 	cmd_i2c[9] = 0;
 
-}
+	encoder[4] = 0; 
+	encoder[5] = 0; 
+	encoder[6] = 0; 
+ 	Encode2 = 0;
 
-void SC_iMotor::Enc3_Clear()
-{
-	senddata_I2C(Outcmd[0], Outcmd[1],70 , Outcmd[3], Outcmd[4], Outcmd[5], Outcmd[6], Outcmd[7]);
 	cmd_i2c[10] = 0;
 	cmd_i2c[11] = 0;
 	cmd_i2c[12] = 0;
-}
 
-void SC_iMotor::Enc4_Clear()
-{
-	senddata_I2C(Outcmd[0], Outcmd[1], Outcmd[2], 71, Outcmd[4], Outcmd[5], Outcmd[6], Outcmd[7]);
+ 	encoder[7] = 0; 
+	encoder[8] = 0; 
+	encoder[9] = 0; 
+ 	Encode3 = 0;
+
 	cmd_i2c[13] = 0;
 	cmd_i2c[14] = 0;
 	cmd_i2c[15] = 0;
+
+	encoder[10] = 0; 
+	encoder[11] = 0; 
+	encoder[12] = 0; 
+ 	Encode4 = 0;
 
 }
 
@@ -115,9 +123,11 @@ int32_t SC_iMotor::Enc2_Read()
   encoder[5] = encoder[5] * 256; 
   encoder[6] = encoder[6] * 65536;
 
+  Encode2 = 0;
+
   Encode2 = encoder[4] + encoder[5] + encoder[6];
 
-
+  
   if (cmd_i2c[1] > 80) Encode2 = Encode2 * -1;
   return Encode2;
 }
@@ -261,4 +271,3 @@ void SC_iMotor::motor(int motor, int speeds, int reverse)
 
   }
 }
-
